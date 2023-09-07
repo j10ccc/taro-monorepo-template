@@ -1,10 +1,11 @@
 import { defineConfig, type UserConfigExport } from '@tarojs/cli'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+import UnoCSS from 'unocss/webpack'
 import devConfig from './dev'
 import prodConfig from './prod'
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
-export default defineConfig(async (merge, { command, mode }) => {
+export default defineConfig(async (merge) => {
   const baseConfig: UserConfigExport = {
     projectName: 'weapp',
     date: '2023-8-31',
@@ -55,6 +56,7 @@ export default defineConfig(async (merge, { command, mode }) => {
       },
       webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
+        chain.plugin('unocss').use(UnoCSS())
       }
     },
     h5: {

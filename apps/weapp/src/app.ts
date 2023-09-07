@@ -1,5 +1,6 @@
 import { PropsWithChildren } from 'react'
 import { useLaunch } from '@tarojs/taro'
+import 'uno.css'
 import './app.less'
 
 function App({ children }: PropsWithChildren<any>) {
