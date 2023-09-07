@@ -1,4 +1,4 @@
-import { View, Button } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
 import { Counter } from "ui";
 import './index.less'
